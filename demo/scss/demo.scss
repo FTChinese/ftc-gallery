@@ -1,0 +1,31 @@
+$o-gallery-is-silent: false;
+@import "../../main";
+
+body {
+	font-family: Metric, sans-serif;
+}
+
+.o-gallery {
+	max-width: 600px;
+}
+
+[data-o-gallery-multipleitemsperpage="true"] {
+	.o-gallery__item__content {
+		margin: 5px 10px;
+		width: 114px;
+		height: 64px;
+	}
+}
+
+.demo__slideshow__poster {
+	display: block;
+	width: 100%;
+	font-family: Arial, Helvetica;
+	font-size: 24px;
+	text-align: center;
+	overflow: hidden;
+	color: oColorsGetPaletteColor(black-70);
+	background-color: oColorsGetPaletteColor(black-50);
+	height: 400px;
+	line-height: 400px;
+}

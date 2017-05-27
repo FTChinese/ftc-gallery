@@ -1,0 +1,68 @@
+/// General styling for the gallery
+@mixin oGallery {
+	user-select: none;
+	position: relative;
+	ol,
+	ul,
+	li {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+	img {
+		display: block;
+		width: 100%;
+	}
+	&[data-o-gallery-multipleitemsperpage=true] & {
+		margin: 0 $_o-gallery-control-width;
+	}
+}
+
+/// Styling for the gallery title
+@mixin oGalleryTitle {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 5;
+}
+
+/// To be applied to the viewport element
+@mixin oGalleryViewport {
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+
+/// Styles the element the holds the different items
+@mixin oGalleryItems {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	// Make sure there's no space between images
+	[data-o-gallery--js] & {
+		white-space: nowrap;
+		font-size: 0;
+	}
+}
+
+/// Styles each gallery item
+@mixin oGalleryItem {
+	position: relative;
+	margin: 0 0 20px;
+	padding: 0;
+	list-style-type: none;
+	// Align items inline so scroller gets the correct width for the viewport
+	[data-o-gallery--js] & {
+		margin: 0;
+		display: inline-block;
+		white-space: normal;
+	}
+}
+
+/// Sets the styling for the content of each item
+@mixin oGalleryItemContent {
+	img {
+		display: block;
+		width: 100%;
+	}
+}

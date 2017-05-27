@@ -1,0 +1,56 @@
+////
+/// @group o-gallery
+/// @link http://registry.origami.ft.com/components/o-gallery
+////
+
+/// Mixin to be applied to the gallery controls
+@mixin oGalleryControl {
+	@include oGalleryOverlayBackground();
+	position: absolute;
+	top: 50%;
+	margin-top: ($_o-gallery-control-height / 2) * -1;
+	width: $_o-gallery-control-width;
+	height: $_o-gallery-control-height;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	overflow: hidden;
+	cursor: pointer;
+	visibility: hidden;
+	z-index: 5;
+
+	&[aria-hidden='false'] {
+		visibility: visible;
+	}
+
+	&--prev {
+		@include oIconsGetIcon('arrow-left', oColorsGetColorFor(o-gallery-overlay, text), $_o-gallery-control-width, $apply-base-styles: false, $iconset-version: 1);
+		left: 0;
+
+		// Preload hover icon
+		&:before {
+			@include oIconsGetIcon('arrow-left', oColorsGetColorFor(o-gallery-overlay-hover, text), $_o-gallery-control-width, $apply-base-styles: false, $iconset-version: 1);
+			content: '';
+		}
+
+		&:focus,
+		#{$o-hoverable-if-hover-enabled} &:hover {
+			@include oIconsGetIcon('arrow-left', oColorsGetColorFor(o-gallery-overlay-hover, text), $_o-gallery-control-width, $apply-base-styles: false, $iconset-version: 1);
+		}
+	}
+
+	&--next {
+		@include oIconsGetIcon('arrow-right', oColorsGetColorFor(o-gallery-overlay, text), $_o-gallery-control-width, $apply-base-styles: false, $iconset-version: 1);
+		right: 0;
+
+		// Preload hover icon
+		&:before {
+			@include oIconsGetIcon('arrow-right', oColorsGetColorFor(o-gallery-overlay-hover, text), $_o-gallery-control-width, $apply-base-styles: false, $iconset-version: 1);
+			content: '';
+		}
+
+		&:focus,
+		#{$o-hoverable-if-hover-enabled} &:hover {
+			@include oIconsGetIcon('arrow-right', oColorsGetColorFor(o-gallery-overlay-hover, text), $_o-gallery-control-width, $apply-base-styles: false, $iconset-version: 1);
+		}
+	}
+}

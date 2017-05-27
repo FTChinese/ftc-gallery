@@ -1,0 +1,34 @@
+@mixin oGalleryOverlayBackground() {
+	background: oColorsGetColorFor(o-gallery-overlay, background);
+	background-color: transparentize(oColorsGetColorFor(o-gallery-overlay, background), 0.2);
+}
+
+@mixin oGalleryBase($class: o-gallery) {
+	.#{$class} {
+		@include oGallery;
+	}
+	.#{$class}--slideshow {
+		@include oGallerySlideshow;
+	}
+	.#{$class}--thumbnails {
+		@include oGalleryThumbnails;
+	}
+	.#{$class}__title {
+		@include oGalleryTitle;
+	}
+	.#{$class}__viewport {
+		@include oGalleryViewport;
+	}
+	.#{$class}__items {
+		@include oGalleryItems;
+	}
+	.#{$class}__item {
+		@include oGalleryItem;
+	}
+	.#{$class}__item__content {
+		@include oGalleryItemContent;
+	}
+	.#{$class}__control {
+		@include oGalleryControl;
+	}
+}

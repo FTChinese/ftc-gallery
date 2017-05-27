@@ -1,0 +1,12 @@
+<h2>Single</h2>
+<div class="o-gallery" data-o-component="o-gallery" data-o-gallery-captionminheight="30" data-o-gallery-captionmaxheight="50">
+	<h1 class="o-gallery__title">Gallery title</h1>
+	<ol class="o-gallery__items">
+		{% for item in pics %}
+			<li class="o-gallery__item"  {% if item.selected %} aria-selected="true" {% endif %} >
+				<div class="o-gallery__item__content">{{ item.content }}</div>
+				<div class="o-gallery__item__caption">{{ item.caption }}</div>
+			</li>
+		{% endfor %}
+	</ol>
+</div>

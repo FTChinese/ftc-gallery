@@ -1,0 +1,17 @@
+@import "o-assets/main";
+@import "o-colors/main";
+@import "o-icons/main";
+@import "o-hoverable/main";
+
+@import "src/scss/color-use-cases";
+@import "src/scss/variables";
+@import "src/scss/mixins";
+
+@import "src/scss/base";
+@import "src/scss/controls";
+@import "src/scss/themes/slideshow";
+@import "src/scss/themes/thumbnails";
+
+@if (not $o-gallery-is-silent) {
+	@include oGalleryBase(o-gallery);
+}
